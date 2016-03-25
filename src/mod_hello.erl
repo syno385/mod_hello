@@ -4,6 +4,10 @@
 
 %% Required by ?INFO_MSG macros
 -include("logger.hrl").
+-include("ejabberd.hrl").
+-include("jlib.hrl").
+
+
 
 %% gen_mod API callbacks
 %% gen_mod API callbacks

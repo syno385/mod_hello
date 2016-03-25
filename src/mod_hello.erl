@@ -29,6 +29,6 @@ stop(_Host) ->
 
 
 filter_packet({From, To, Packet} = Input) ->
-.
+ok.
 
 

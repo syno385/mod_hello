@@ -12,8 +12,7 @@
 %% gen_mod API callbacks
 %% gen_mod API callbacks
 %% gen_mod API callbacks
-%% gen_mod API callbacks
-%% gen_mod API callbacks
+ 
 -export([start/2, stop/1]).
 
 start(_Host, _Opts) ->

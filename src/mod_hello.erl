@@ -25,8 +25,7 @@ stop(_Host) ->
 
 
 filter_packet({From, To, Packet} = Input) ->
-%~ ?DEBUG("filtering packet...~nFrom: ~p~nTo: ~p~nPacket: ~p~n",
-	   %~ [From, To, Packet),
+
 end.
 
 

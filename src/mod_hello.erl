@@ -30,8 +30,7 @@ stop(_Host) ->
 on_filter_packet({From, To, XML} = Packet) ->
     %% does something with a packet
     %% should return modified Packet or atom `drop` to drop the packet
-    ?INFO_MSG("Packet HERE!!" , [])
-    
+    ?INFO_MSG("Packet HERE!!" , []),
     Packet.
     
 

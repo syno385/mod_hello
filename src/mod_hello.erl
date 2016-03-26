@@ -13,7 +13,7 @@
 %% gen_mod API callbacks
 %% gen_mod API callbacks
  
--export([start/2, stop/1]).
+-export([start/2, stop/1, on_filter_packet/1]).
 
 start(_Host, _Opts) ->
     ?INFO_MSG("Hello, ejabberd world! ~p : ~p", [_Host, _Opts]),

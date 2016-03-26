@@ -16,21 +16,26 @@
 -export([start/2, stop/1, on_filter_packet/1]).
 
 start(_Host, _Opts) ->
-    ?INFO_MSG("Hello, ejabberd world! ~p : ~p", [_Host, _Opts]),
+    ?INFO_MSG("mod_hello START! ~p : ~p", [_Host, _Opts]),
         ejabberd_hooks:add(filter_packet, global , ?MODULE, on_filter_packet, 100),
     ok.
 
 stop(_Host) ->
-	%% ejabberd_hooks:delete(filter_packet, global, ?MODULE, filter_packet, 100),
-    ?INFO_MSG("Bye bye, ejabberd world!", []),
-     %~ ejabberd_hooks:delete(filter_packet, global, ?MODULE, on_filter_packet, 0),
+	
+    ?INFO_MSG("mod_hello STOP!!", []),
+	ejabberd_hooks:delete(filter_packet, global, ?MODULE, on_filter_packet, 100),	
     ok.
 
 
 on_filter_packet({From, To, XML} = Packet) ->
     %% does something with a packet
     %% should return modified Packet or atom `drop` to drop the packet
-    ?INFO_MSG("Packet HERE!!  from: ~p  -> to: ~p "  , [From , To ]),
+    
+    FromUser 	=  From#jid.luser,
+    FromServer 	=  From#jid.lserver,
+        
+    
+    ?INFO_MSG("Packet HERE!!  from: ~p@~p"  , [FromUser , FromServer ]),
     Packet.
     
 

@@ -16,7 +16,7 @@
 -export([start/2, stop/1]).
 
 start(_Host, _Opts) ->
-    ?INFO_MSG("Hello, ejabberd world! ~p", [Opts]),
+    ?INFO_MSG("Hello, ejabberd world! ~p", [_Opts]),
      %~ ejabberd_hooks:add(filter_packet, global, ?MODULE, filter_packet, 100),
     ok.
 

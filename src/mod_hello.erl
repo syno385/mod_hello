@@ -23,7 +23,7 @@ start(_Host, _Opts) ->
 stop(_Host) ->
 	%% ejabberd_hooks:delete(filter_packet, global, ?MODULE, filter_packet, 100),
     ?INFO_MSG("Bye bye, ejabberd world!", []),
-     ejabberd_hooks:delete(filter_packet, global, ?MODULE, on_filter_packet, 0).
+     ejabberd_hooks:delete(filter_packet, global, ?MODULE, on_filter_packet, 0),
     ok.
 
 

@@ -35,7 +35,7 @@ on_filter_packet({From, To, XML} = Packet) ->
     FromServer 	=  From#jid.lserver,
         
     
-    ?INFO_MSG("Packet HERE!!  from: ~p@~p"  , [FromUser , FromServer ]),
+    ?INFO_MSG("Packet HERE!!  from: ~s@~s"  , [FromUser , FromServer ]),
     Packet.
     
 

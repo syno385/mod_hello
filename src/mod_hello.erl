@@ -17,7 +17,7 @@
 
 start(_Host, _Opts) ->
     ?INFO_MSG("Hello, ejabberd world! ~p : ~p", [_Host, _Opts]),
-        ejabberd_hooks:add(filter_packet, _Host , ?MODULE, on_filter_packet, 100),
+        ejabberd_hooks:add(filter_packet, global , ?MODULE, on_filter_packet, 100),
     ok.
 
 stop(_Host) ->

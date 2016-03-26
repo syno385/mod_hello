@@ -17,7 +17,7 @@
 
 start(_Host, _Opts) ->
     ?INFO_MSG("Hello, ejabberd world! ~p : ~p", [_Host, _Opts]),
-        ejabberd_hooks:add(filter_packet, _Host , ?MODULE, on_filter_packet, 0),
+        ejabberd_hooks:add(filter_packet, _Host , ?MODULE, on_filter_packet, 100),
     ok.
 
 stop(_Host) ->
@@ -30,7 +30,9 @@ stop(_Host) ->
 on_filter_packet({From, To, XML} = Packet) ->
     %% does something with a packet
     %% should return modified Packet or atom `drop` to drop the packet
-    ?INFO_MSG("Packet HERE!!" , []).
+    ?INFO_MSG("Packet HERE!!" , [])
+    
+    Packet.
     
 
 
